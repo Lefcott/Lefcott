@@ -7,9 +7,9 @@ import { GeistSans } from "geist/font/sans";
 const geist = GeistSans;
 
 export const metadata: Metadata = {
-  title: "Leandro Cotti | Front-End Developer",
+  title: "Leandro Cotti | Full-Stack Engineer · UX/UI Designer",
   description:
-    "Front-End Developer specialized in React, Next.js and UX-driven development.",
+    "Trabajo en la intersección entre diseño y desarrollo, construyendo experiencias claras, escalables y agradables de usar, desde la idea hasta producción.",
 };
 
 export default function RootLayout({
