@@ -52,11 +52,19 @@ export const experience = [
     company: "Widergy",
     role: "Backend Developer",
     description:
-      "Planificación y mantenimiento de proyectos backend en entornos productivos.",
+      "Desarrollo backend de un chatbot multi-tenant y multi-canal para empresas de servicios públicos como Edenor, Eden, Edes y Camuzzi, enfocado en escalabilidad, tiempo real y automatización de flujos de atención al cliente.",
     highlights: [
-      "Node.js con TypeScript",
-      "MongoDB, Postgres y Redis",
-      "Monitoreo y observabilidad (ELK, Rollbar)",
+      "Arquitectura de chatbot multi-tenant y multi-canal (Web, WhatsApp, Facebook)",
+      "Integración con Dialogflow para detección de intenciones",
+      "Motor de flujos conversacionales configurable y agnóstico al canal",
+      "Mensajería en tiempo real con Socket.io y Redis",
+      "Transferencia y gestión de conversaciones entre agentes",
+      "Integraciones con APIs de clientes (facturas, saldos, reclamos)",
+      "Persistencia en MongoDB y PostgreSQL para datos y reportes",
+      "Integración con WhatsApp mediante Wavy",
+      "Sistema de envío y tracking de emails con AWS SNS y SES",
+      "Testing unitario con Mocha y Chai",
+      "Trabajo con metodologías Scrum y Kanban usando Jira",
     ],
   },
 ];

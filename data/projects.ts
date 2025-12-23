@@ -37,20 +37,20 @@ export const projects = [
     repo: "",
   },
   {
-    title: "Venta de entradas — Ácidamente",
-    description:
-      "Plataforma web para la venta de entradas de una banda de rock. Desarrollada con Next.js utilizando Incremental Static Regeneration (ISR) para lograr tiempos de carga rápidos y una excelente performance. La aplicación gestiona shows, asistentes y pagos, ofreciendo una experiencia fluida tanto para usuarios como para organizadores.",
-    images: 4,
-    stack: ["Next.js", "ISR", "MongoDB"],
-    live: "",
-    repo: "",
-  },
-  {
     title: "Valto",
     description:
       "Plataforma web de gestión para inmobiliarias que permite administrar propiedades, contactos, contratos y liquidaciones. Diseñé la experiencia UX/UI completa en Figma y desarrollé el frontend de la aplicación, enfocándome en usabilidad, claridad visual y eficiencia en los flujos de trabajo.",
     images: 6,
     stack: ["Next.js", "UX/UI Design", "Figma"],
+    live: "",
+    repo: "",
+  },
+  {
+    title: "Venta de entradas — Ácidamente",
+    description:
+      "Plataforma web para la venta de entradas de una banda de rock. Desarrollada con Next.js utilizando Incremental Static Regeneration (ISR) para lograr tiempos de carga rápidos y una excelente performance. La aplicación gestiona shows, asistentes y pagos, ofreciendo una experiencia fluida tanto para usuarios como para organizadores.",
+    images: 4,
+    stack: ["Next.js", "ISR", "MongoDB"],
     live: "",
     repo: "",
   },
