@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { GeistSans } from "geist/font/sans";
-import { setDictionary, setLocale } from "@/getters/dictionary";
 import { getDictionary } from "../i18n/getDictionary";
 const geist = GeistSans;
 
@@ -27,13 +26,11 @@ export default async function RootLayout({
 }) {
   const awaitedParams = await params;
   const dict = await getDictionary(awaitedParams.locale);
-  setLocale(awaitedParams.locale);
-  setDictionary(dict);
 
   return (
     <html lang={awaitedParams.locale} className={geist.className}>
       <body>
-        <Header />
+        <Header dict={dict} />
         <main className="min-h-screen">{children}</main>
         <Footer />
       </body>

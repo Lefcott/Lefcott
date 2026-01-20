@@ -1,4 +1,5 @@
 {
+  "locale": "es",
   "nav": {
     "experience": "Experiencia",
     "projects": "Proyectos",
@@ -6,7 +7,20 @@
     "contact": "Contacto"
   },
   "hero": {
-    "title": "Diseño y desarrollo productos digitales",
-    "subtitle": "Software Engineer especializado en experiencias modernas, escalables y humanas."
+    "kicker": "Full-Stack Engineer · UX/UI Designer",
+    "title": {
+      "line1": "Diseño y desarrollo",
+      "line2": "productos digitales",
+      "line3": "bien pensados"
+    },
+    "description": "Trabajo en la intersección entre diseño y desarrollo, construyendo experiencias claras, escalables y agradables de usar, desde la idea hasta producción.",
+    "cta": {
+      "projects": "Ver proyectos",
+      "contact": "Contacto"
+    },
+    "imageAlt": "Diseño y desarrollo de productos digitales"
+  },
+  "experience": {
+    "title": "Experiencia"
   }
 }

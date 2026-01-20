@@ -1,4 +1,4 @@
-type Dictionary = typeof import("@/app/i18n/dictionaries/en.json");
+export type Dictionary = typeof import("@/app/i18n/dictionaries/en.json");
 
 let dictionary: Dictionary;
 let locale: "es" | "en";

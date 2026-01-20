@@ -1,10 +1,11 @@
-import { getDictionary, getLocale } from "@/getters/dictionary";
+import { Dictionary } from "@/getters/dictionary";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Header() {
-  const dict = getDictionary();
-
+type Props = {
+  dict: Dictionary;
+};
+export default function Header({ dict }: Props) {
   return (
     <header
       className="
@@ -48,10 +49,10 @@ export default function Header() {
           {/* CTA Contacto y Locale */}
           <div className="flex items-center gap-6">
             <Link
-              href={getLocale() === "es" ? "/en" : "/es"}
+              href={dict.locale === "es" ? "/en" : "/es"}
               className="text-sm"
             >
-              {getLocale() === "es" ? "EN" : "ES"}
+              {dict.locale === "es" ? "EN" : "ES"}
             </Link>
             <a
               href="#contacto"

@@ -1,4 +1,5 @@
 {
+  "locale": "en",
   "nav": {
     "experience": "Experience",
     "projects": "Projects",
@@ -6,7 +7,20 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "I design and build digital products",
-    "subtitle": "Software Engineer focused on modern, scalable and human-centered experiences."
+    "kicker": "Full-Stack Engineer · UX/UI Designer",
+    "title": {
+      "line1": "Designing and building",
+      "line2": "thoughtful digital",
+      "line3": "products"
+    },
+    "description": "I work at the intersection of design and development, building clear, scalable and enjoyable digital experiences, from concept to production.",
+    "cta": {
+      "projects": "View projects",
+      "contact": "Contact"
+    },
+    "imageAlt": "Design and development of digital products"
+  },
+  "experience": {
+    "title": "Experience"
   }
 }

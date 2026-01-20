@@ -1,27 +1,31 @@
 import Image from "next/image";
+import { Dictionary } from "@/getters/dictionary";
 
-export default function Hero() {
+type Props = {
+  dict: Dictionary;
+};
+export default function Hero({ dict }: Props) {
   return (
     <section className="relative px-6 pt-32 pb-40 overflow-hidden">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Texto */}
         <div>
           <span className="inline-block mb-4 text-sm text-neutral-500">
-            Full-Stack Engineer · UX/UI Designer
+            {dict.hero.kicker}
           </span>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-neutral-900">
-            Diseño y desarrollo <br />
+            {dict.hero.title.line1}
+            <br />
             <span className="text-neutral-600">
-              productos digitales <br className="hidden sm:block" />
-              bien pensados
+              {dict.hero.title.line2}
+              <br className="hidden sm:block" />
+              {dict.hero.title.line3}
             </span>
           </h1>
 
           <p className="mt-6 text-lg text-neutral-600 max-w-xl leading-relaxed">
-            Trabajo en la intersección entre diseño y desarrollo, construyendo
-            experiencias claras, escalables y agradables de usar, desde la idea
-            hasta producción.
+            {dict.hero.description}
           </p>
 
           {/* CTAs */}
@@ -38,7 +42,7 @@ export default function Hero() {
                 hover:bg-neutral-800
               "
             >
-              Ver proyectos
+              {dict.hero.cta.projects}
             </a>
 
             <a
@@ -52,7 +56,7 @@ export default function Hero() {
                 hover:bg-black/5
               "
             >
-              Contacto
+              {dict.hero.cta.contact}
             </a>
           </div>
         </div>
@@ -70,7 +74,7 @@ export default function Hero() {
           >
             <Image
               src="/hero.jpg"
-              alt="Diseño y desarrollo de productos digitales"
+              alt={dict.hero.imageAlt}
               width={900}
               height={600}
               className="object-cover"

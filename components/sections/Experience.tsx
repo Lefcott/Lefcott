@@ -1,16 +1,23 @@
-import { experience } from "@/data/experience";
+import { Locale } from "@/app/i18n/config";
+import { getExperience } from "@/data/experience";
+import { Dictionary } from "@/getters/dictionary";
 
-export default function Experience() {
+type Props = {
+  dict: Dictionary;
+};
+export default function Experience({ dict }: Props) {
   return (
     <section id="experiencia" className="px-6 py-28 max-w-6xl mx-auto">
-      <h2 className="text-4xl font-semibold font-display">Experiencia</h2>
+      <h2 className="text-4xl font-semibold font-display">
+        {dict.experience.title}
+      </h2>
 
       <div className="mt-16 relative">
         {/* Línea */}
         <div className="absolute left-4 top-0 bottom-0 w-px bg-neutral-200/70" />
 
         <ul className="space-y-8">
-          {experience.map((item, index) => (
+          {getExperience(dict.locale as Locale).map((item, index) => (
             <li key={index} className="relative pl-16">
               {/* Punto */}
               <span className="absolute left-0 top-5 w-8 h-8 rounded-full bg-[#E7B86A]/20 flex items-center justify-center">
