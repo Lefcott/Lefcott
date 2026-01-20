@@ -22,10 +22,10 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
   const awaitedParams = await params;
-  const dict = await getDictionary(awaitedParams.locale);
+  const dict = await getDictionary(awaitedParams.locale as Locale);
 
   return (
     <html lang={awaitedParams.locale} className={geist.className}>
