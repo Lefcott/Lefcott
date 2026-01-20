@@ -1,16 +1,22 @@
 import Image from "next/image";
-import { projects } from "@/data/projects";
+import { getProjects } from "@/data/projects";
+import { Dictionary } from "@/getters/dictionary";
+import { Locale } from "@/app/i18n/config";
 
-export default function Projects() {
-  const [featured, ...rest] = projects;
+type Props = {
+  dict: Dictionary;
+};
+export default function Projects({ dict }: Props) {
+  const [featured, ...rest] = getProjects(dict.locale as Locale);
 
   return (
     <section id="proyectos" className="px-6 py-28 max-w-6xl mx-auto">
-      <h2 className="text-4xl font-semibold font-display">Proyectos</h2>
+      <h2 className="text-4xl font-semibold font-display">
+        {dict.projects.title}
+      </h2>
 
       <p className="mt-4 text-neutral-600 max-w-2xl">
-        Productos reales donde combino desarrollo fullstack y diseño UX/UI, con
-        foco en experiencia de usuario, performance y escalabilidad.
+        {dict.projects.description}
       </p>
 
       {/* ================== PROYECTO DESTACADO ================== */}
@@ -36,7 +42,7 @@ function ProjectCard({
   project,
   featured = false,
 }: {
-  project: (typeof projects)[number];
+  project: ReturnType<typeof getProjects>[number];
   featured?: boolean;
 }) {
   return (
@@ -52,6 +58,7 @@ function ProjectCard({
     >
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <Carousel
+          projectKey={project.key}
           title={project.title}
           images={project.images}
           featured={featured}
@@ -87,10 +94,12 @@ function ProjectCard({
 }
 
 function Carousel({
+  projectKey,
   title,
   images,
   featured,
 }: {
+  projectKey: string;
   title: string;
   images: number;
   featured: boolean;
@@ -130,7 +139,7 @@ function Carousel({
               `}
             >
               <Image
-                src={`/projects/${slugify(title)}/${i + 1}.png`}
+                src={`/projects/${projectKey}/${i + 1}.png`}
                 alt={`${title} screenshot ${i + 1}`}
                 fill
                 className="object-contain p-4"

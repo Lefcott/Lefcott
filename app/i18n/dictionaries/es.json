@@ -22,5 +22,9 @@
   },
   "experience": {
     "title": "Experiencia"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "description": "Productos reales donde combino desarrollo fullstack y diseño UX/UI, con foco en experiencia de usuario, performance y escalabilidad."
   }
 }

@@ -22,5 +22,9 @@
   },
   "experience": {
     "title": "Experience"
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Real-world products where I combine full-stack development and UX/UI design, with a strong focus on user experience, performance, and scalability."
   }
 }
