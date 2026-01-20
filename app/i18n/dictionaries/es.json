@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "skills": "Skills",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Diseño y desarrollo productos digitales",
+    "subtitle": "Software Engineer especializado en experiencias modernas, escalables y humanas."
+  }
+}

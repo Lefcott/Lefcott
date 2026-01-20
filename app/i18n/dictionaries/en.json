@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "I design and build digital products",
+    "subtitle": "Software Engineer focused on modern, scalable and human-centered experiences."
+  }
+}

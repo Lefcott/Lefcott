@@ -1,6 +1,10 @@
+import { getDictionary, getLocale } from "@/getters/dictionary";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
+  const dict = getDictionary();
+
   return (
     <header
       className="
@@ -41,10 +45,17 @@ export default function Header() {
             </span>
           </div>
 
-          {/* CTA Contacto */}
-          <a
-            href="#contacto"
-            className="
+          {/* CTA Contacto y Locale */}
+          <div className="flex items-center gap-6">
+            <Link
+              href={getLocale() === "es" ? "/en" : "/es"}
+              className="text-sm"
+            >
+              {getLocale() === "es" ? "EN" : "ES"}
+            </Link>
+            <a
+              href="#contacto"
+              className="
               px-4 py-2
               rounded-full
               border border-black/10
@@ -52,9 +63,10 @@ export default function Header() {
               transition
               hover:bg-black/5
             "
-          >
-            Contacto
-          </a>
+            >
+              {dict.nav.contact}
+            </a>
+          </div>
         </div>
 
         {/* Navegación mobile */}
@@ -69,16 +81,16 @@ export default function Header() {
             overflow-x-auto
           "
         >
-          <NavLink href="#experiencia">Experiencia</NavLink>
-          <NavLink href="#proyectos">Proyectos</NavLink>
-          <NavLink href="#skills">Skills</NavLink>
+          <NavLink href="#experiencia">{dict.nav.experience}</NavLink>
+          <NavLink href="#proyectos">{dict.nav.projects}</NavLink>
+          <NavLink href="#skills">{dict.nav.skills}</NavLink>
         </nav>
 
         {/* Navegación desktop */}
         <nav className="hidden sm:flex items-center gap-8 h-0 pb-4 py-2 text-sm text-neutral-600">
-          <NavLink href="#experiencia">Experiencia</NavLink>
-          <NavLink href="#proyectos">Proyectos</NavLink>
-          <NavLink href="#skills">Skills</NavLink>
+          <NavLink href="#experiencia">{dict.nav.experience}</NavLink>
+          <NavLink href="#proyectos">{dict.nav.projects}</NavLink>
+          <NavLink href="#skills">{dict.nav.skills}</NavLink>
         </nav>
       </div>
     </header>

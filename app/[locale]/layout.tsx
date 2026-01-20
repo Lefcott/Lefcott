@@ -1,9 +1,11 @@
-import "./globals.css";
+import { Locale, locales } from "../i18n/config";
+import "../globals.css";
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-// import { Inter, DM_Sans } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
+import { setDictionary, setLocale } from "@/getters/dictionary";
+import { getDictionary } from "../i18n/getDictionary";
 const geist = GeistSans;
 
 export const metadata: Metadata = {
@@ -12,13 +14,24 @@ export const metadata: Metadata = {
     "Trabajo en la intersección entre diseño y desarrollo, construyendo experiencias claras, escalables y agradables de usar, desde la idea hasta producción.",
 };
 
-export default function RootLayout({
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: Locale }>;
 }) {
+  const awaitedParams = await params;
+  const dict = await getDictionary(awaitedParams.locale);
+  setLocale(awaitedParams.locale);
+  setDictionary(dict);
+
   return (
-    <html lang="en" className={geist.className}>
+    <html lang={awaitedParams.locale} className={geist.className}>
       <body>
         <Header />
         <main className="min-h-screen">{children}</main>
