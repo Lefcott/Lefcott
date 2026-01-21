@@ -1,4 +1,10 @@
-export default function Footer() {
+import { Dictionary } from "@/getters/dictionary";
+
+type Props = {
+  dict: Dictionary;
+};
+
+export default function Footer({ dict }: Props) {
   return (
     <footer className="px-6 pb-20">
       <div
@@ -19,8 +25,7 @@ export default function Footer() {
             </p>
 
             <p className="mt-2 text-sm text-neutral-600 max-w-sm">
-              Full-Stack Engineer · UX/UI Designer. Diseño y desarrollo
-              productos digitales claros, escalables y bien pensados.
+              {dict.footer.description}
             </p>
           </div>
 
@@ -30,7 +35,7 @@ export default function Footer() {
               href="mailto:lefcott@hotmail.com"
               className="text-neutral-700 hover:text-neutral-900 transition"
             >
-              lefcott@hotmail.com
+              {dict.footer.email}
             </a>
 
             <div className="flex gap-6 text-neutral-600">
@@ -66,7 +71,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <p className="text-xs text-neutral-500 text-center">
-          © {new Date().getFullYear()} — Diseñado y desarrollado por mí.
+          © {new Date().getFullYear()} — {dict.footer.copyright}
         </p>
       </div>
     </footer>

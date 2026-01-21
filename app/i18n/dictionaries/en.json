@@ -45,5 +45,10 @@
     "description": "I'm open to new opportunities where I can contribute through full-stack development and UX/UI design, building solid and thoughtfully crafted digital products.",
     "whatsapp": "Let's chat on WhatsApp",
     "email": "lefcott@hotmail.com"
+  },
+  "footer": {
+    "description": "Full-Stack Engineer · UX/UI Designer. I design and build clear, scalable, and thoughtfully crafted digital products.",
+    "email": "lefcott@hotmail.com",
+    "copyright": "Designed and developed by me."
   }
 }

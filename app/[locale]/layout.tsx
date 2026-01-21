@@ -32,7 +32,7 @@ export default async function RootLayout({
       <body>
         <Header dict={dict} />
         <main className="min-h-screen">{children}</main>
-        <Footer />
+        <Footer dict={dict} />
       </body>
     </html>
   );
