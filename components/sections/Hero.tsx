@@ -19,7 +19,7 @@ export default function Hero({ dict }: Props) {
             <br />
             <span className="text-neutral-600">
               {dict.hero.title.line2}
-              <br className="hidden sm:block" />
+              <br />
               {dict.hero.title.line3}
             </span>
           </h1>
