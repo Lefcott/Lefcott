@@ -39,5 +39,11 @@
       "integrations": "Integraciones y Servicios",
       "observability": "Observabilidad"
     }
+  },
+  "contact": {
+    "title": "¿Hablamos?",
+    "description": "Estoy abierto a nuevas oportunidades donde pueda aportar desde el desarrollo fullstack y el diseño UX/UI, creando productos digitales sólidos y bien pensados.",
+    "whatsapp": "Hablemos por WhatsApp",
+    "email": "lefcott@hotmail.com"
   }
 }
