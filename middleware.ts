@@ -6,7 +6,6 @@ const defaultLocale = "es";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // ⛔ Ignorar archivos estáticos y APIs
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
@@ -16,12 +15,10 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Si ya tiene locale, continuar
   if (locales.some((locale) => pathname.startsWith(`/${locale}`))) {
     return NextResponse.next();
   }
 
-  // Detectar idioma del navegador
   const acceptLanguage = request.headers.get("accept-language");
   const locale = acceptLanguage?.startsWith("en") ? "en" : defaultLocale;
 
