@@ -1,25 +1,33 @@
 import { NextRequest, NextResponse } from "next/server";
-import { locales, defaultLocale } from "./app/i18n/config";
 
-export default function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname;
+const locales = ["es", "en"];
+const defaultLocale = "es";
 
-  // Ya tiene locale
-  if (locales.some((l) => pathname.startsWith(`/${l}`))) {
-    return;
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // ⛔ Ignorar archivos estáticos y APIs
+  if (
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/favicon") ||
+    pathname.match(/\.(png|jpg|jpeg|svg|gif|webp|ico|css|js)$/)
+  ) {
+    return NextResponse.next();
   }
 
+  // Si ya tiene locale, continuar
+  if (locales.some((locale) => pathname.startsWith(`/${locale}`))) {
+    return NextResponse.next();
+  }
+
+  // Detectar idioma del navegador
   const acceptLanguage = request.headers.get("accept-language");
-  const browserLocale = acceptLanguage?.split(",")[0].split("-")[0];
+  const locale = acceptLanguage?.startsWith("en") ? "en" : defaultLocale;
 
-  const locale = locales.includes(browserLocale as "en" | "es")
-    ? browserLocale
-    : defaultLocale;
-
-  request.nextUrl.pathname = `/${locale}${pathname}`;
-  return NextResponse.redirect(request.nextUrl);
+  return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
 }
 
 export const config = {
-  matcher: ["/((?!_next|api|favicon.ico).*)"],
+  matcher: ["/((?!_next).*)"],
 };
