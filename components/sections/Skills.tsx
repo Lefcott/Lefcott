@@ -1,37 +1,43 @@
-export default function Skills() {
+import { Dictionary } from "@/getters/dictionary";
+
+type Props = {
+  dict: Dictionary;
+};
+export default function Skills({ dict }: Props) {
   return (
     <section id="skills" className="px-6 py-32 max-w-6xl mx-auto">
       <h2 className="text-4xl font-semibold font-display">
-        Skills & herramientas
+        {dict.skills.title}
       </h2>
 
       <p className="mt-4 text-neutral-600 max-w-2xl">
-        Tecnologías y herramientas con las que trabajo en el día a día,
-        enfocándome en construir productos sólidos, escalables y bien diseñados.
+        {dict.skills.description}
       </p>
 
       <div className="mt-16 grid gap-10 sm:grid-cols-2">
         <SkillCard
-          title="Frontend & UX"
+          title={dict.skills.categories.frontend}
           skills={["React", "Next.js", "TypeScript", "Tailwind CSS", "Figma"]}
         />
 
         <SkillCard
-          title="Backend"
-          skills={["Node.js", "Express", "NestJS", "APIs REST"]}
+          title={dict.skills.categories.backend}
+          skills={["Node.js", "Express", "NestJS", "REST APIs"]}
         />
 
         <SkillCard
-          title="Bases de datos & Tiempo real"
-          skills={["MongoDB", "PostgreSQL", "Socket.io"]}
+          title={dict.skills.categories.databases}
+          skills={["MongoDB", "DynamoDB", "PostgreSQL", "Socket.IO", "Pusher"]}
         />
 
         <SkillCard
-          title="Cloud & DevOps"
+          title={dict.skills.categories.cloud}
           skills={[
             "AWS (EC2, S3, EB, Lambda)",
             "API Gateway",
             "EventBridge",
+            "GCP",
+            "Vercel",
             "SES / SNS",
             "Alexa for Business",
             "GitHub Actions",
@@ -39,7 +45,24 @@ export default function Skills() {
         />
 
         <SkillCard
-          title="Workflow & Metodologías"
+          title={dict.skills.categories.integrations}
+          skills={[
+            "HERE API",
+            "Mapbox",
+            "Auth0",
+            "Mailgun",
+            "Cloudinary",
+            "cron-job.org",
+          ]}
+        />
+
+        <SkillCard
+          title={dict.skills.categories.observability}
+          skills={["Rollbar", "ELK", "Cloudwatch"]}
+        />
+
+        <SkillCard
+          title={dict.skills.categories.workflow}
           skills={["Git", "GitHub", "Scrum", "Kanban", "Jira", "Linear"]}
         />
       </div>

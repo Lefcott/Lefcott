@@ -51,6 +51,7 @@ export default function Header({ dict }: Props) {
             <Link
               href={dict.locale === "es" ? "/en" : "/es"}
               className="text-sm"
+              scroll={false}
             >
               {dict.locale === "es" ? "EN" : "ES"}
             </Link>

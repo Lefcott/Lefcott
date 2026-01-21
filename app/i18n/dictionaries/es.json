@@ -26,5 +26,18 @@
   "projects": {
     "title": "Proyectos",
     "description": "Productos reales donde combino desarrollo fullstack y diseño UX/UI, con foco en experiencia de usuario, performance y escalabilidad."
+  },
+  "skills": {
+    "title": "Skills & herramientas",
+    "description": "Tecnologías y herramientas con las que trabajo en el día a día, enfocándome en construir productos sólidos, escalables y bien diseñados.",
+    "categories": {
+      "frontend": "Frontend & UX",
+      "backend": "Backend",
+      "databases": "Bases de datos & Tiempo real",
+      "cloud": "Cloud & DevOps",
+      "workflow": "Workflow & Metodologías",
+      "integrations": "Integraciones y Servicios",
+      "observability": "Observabilidad"
+    }
   }
 }
